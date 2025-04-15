@@ -45,8 +45,8 @@ const Navbar = ({ handleSlideIn }) => {
           <Link to="/" className="nav-item nav-btn res-nav">
             About
           </Link>
-          <Link to="/" className="nav-item nav-btn res-nav">
-            Products
+          <Link to="/Tags" className="nav-item nav-btn res-nav">
+            Community
           </Link>
           <Link to="/" className="nav-item nav-btn res-nav">
             For Teams
