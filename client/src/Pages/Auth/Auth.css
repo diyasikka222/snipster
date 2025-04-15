@@ -21,6 +21,8 @@
   font-size: 36px;
   text-align: center;
   text-shadow: 0 2px 6px rgba(0, 255, 158, 0.6); /* Glow effect */
+  height: 30px;
+  width: 30px;
 }
 
 /* Auth container 2 (Form container) */

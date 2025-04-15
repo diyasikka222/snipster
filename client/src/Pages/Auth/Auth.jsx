@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import "./Auth.css";
-import icon from "../../assets/icon.png";
+import icon from "../../assets/Snipster-logo.png";
 import AboutAuth from "./AboutAuth";
 import { signup, login } from "../../actions/auth";
 const Auth = () => {
@@ -41,7 +41,7 @@ const Auth = () => {
     <section className="auth-section">
       {isSignup && <AboutAuth />}
       <div className="auth-container-2">
-        <img src={icon} alt="stack overflow" className="login-logo" />
+        <img src={icon} alt="Snipster Logo" className="login-logo" />
         <form onSubmit={handleSubmit}>
           {isSignup && (
             <label htmlFor="name">
