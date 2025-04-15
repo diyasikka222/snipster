@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import decode from "jwt-decode";
 
 import logo from "../../assets/Snipster-logo.png";
-import search from "../../assets/search-solid.svg";
+import search from "../../assets/search.png";
 import Avatar from "../../components/Avatar/Avatar";
 import "./Navbar.css";
 import { setCurrentUser } from "../../actions/currentUser";

@@ -1,7 +1,7 @@
 import React from "react";
 import "./RightSidebar.css";
-import comment from "../../assets/comment-alt-solid.svg";
-import pen from "../../assets/pen-solid.svg";
+import comment from "../../assets/comment-alt-solid.png";
+import pen from "../../assets/pen-solid.png";
 import blackLogo from "../../assets/Snipster-logo.png";
 
 const Widget = () => {
@@ -10,14 +10,14 @@ const Widget = () => {
       <h4>The Snipster Blog</h4>
       <div className="right-sidebar-div-1">
         <div className="right-sidebar-div-2">
-          <img src={pen} alt="pen" width="18" />
+          <img src={pen} alt="pen" width="14" />
           <p>
             Observability is key to the future of software (and your DevOps
             career)
           </p>
         </div>
         <div className="right-sidebar-div-2">
-          <img src={pen} alt="pen" width="18" />
+          <img src={pen} alt="pen" width="14" />
           <p>Podcast 374: How valuable is your screen name?</p>
         </div>
       </div>

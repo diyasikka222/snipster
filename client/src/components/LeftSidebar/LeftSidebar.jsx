@@ -1,7 +1,7 @@
 import React from "react";
 import "./LeftSidebar.css";
 import { NavLink } from "react-router-dom";
-import Globe from "../../assets/Globe.svg";
+import Globe from "../../assets/Globe.png";
 
 const LeftSidebar = ({ slideIn, handleSlideIn }) => {
   const slideInStyle = {
@@ -34,7 +34,7 @@ const LeftSidebar = ({ slideIn, handleSlideIn }) => {
               className="side-nav-links"
               activeclassname="active"
             >
-              <img src={Globe} alt="Globe" />
+              <img src={Globe} alt="Globe" height={"20px"}/>
               <p style={{ paddingLeft: "10px" }}> Questions </p>
             </NavLink>
           </button>
@@ -64,7 +64,7 @@ const LeftSidebar = ({ slideIn, handleSlideIn }) => {
               className="side-nav-ai"
               activeclassname="active"
             >
-              <h2>Ask AI?</h2>
+              <h2>AIester</h2>
             </NavLink>
           </button>
         </div>
