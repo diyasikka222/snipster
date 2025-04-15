@@ -11,6 +11,8 @@ const Questions = ({ slideIn, handleSlideIn }) => {
       <LeftSidebar slideIn={slideIn} handleSlideIn={handleSlideIn} />
       <div className="home-container-2">
         <HomeMainbar />
+      </div>
+      <div>
         <RightSidebar />
       </div>
     </div>

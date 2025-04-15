@@ -1,8 +1,9 @@
 /* Question Details Page */
 .question-details-page {
-  width: calc(100% - 300px - 24px);
+  width: calc(100% - 9px - 10px);
   float: left;
-  margin: 25px 0px;
+  /* margin: 25px 0px; */
+  margin-left: 9px;
   padding: 0px;
   background-color: #121212; /* Dark background for the page */
   border-radius: 12px;

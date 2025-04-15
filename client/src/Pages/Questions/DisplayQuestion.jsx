@@ -9,6 +9,8 @@ const DisplayQuestion = ({ slideIn, handleSlideIn }) => {
       <LeftSidebar slideIn={slideIn} handleSlideIn={handleSlideIn} />
       <div className="home-container-2">
         <QuestionsDetails />
+      </div>
+      <div>
         <RightSidebar />
       </div>
     </div>
