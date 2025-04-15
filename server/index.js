@@ -6,6 +6,7 @@ import userRoutes from "./routes/users.js";
 import questionRoutes from "./routes/Questions.js";
 import answerRoutes from "./routes/Answers.js";
 import connectDB from "./connectMongoDb.js";
+import { run } from './genai.js';
 
 dotenv.config();
 connectDB();
@@ -27,3 +28,6 @@ const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`server running on port ${PORT}`);
 });
+
+run(process.env.API_KEY);
+// run();
