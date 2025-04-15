@@ -44,9 +44,8 @@ const AllRoutes = ({ slideIn, handleSlideIn }) => {
           <UserProfile slideIn={slideIn} handleSlideIn={handleSlideIn} />
         }
       />
-
-      {/* ✅ Add this route */}
       <Route path="/ai-ask" element={<AskAI />} />
+      <Route path="/about" element={<about />} />
     </Routes>
   );
 };
