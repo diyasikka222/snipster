@@ -1,23 +1,134 @@
+/* Import a cyberpunk-style font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap');
+
+body {
+  background: radial-gradient(circle at top left, #0f0c29, #302b63, #24243e);
+  color: #f0e6ff;
+  font-family: 'Orbitron', 'Share Tech Mono', monospace;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Glitch Text Effect */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px #ff00c1, -2px -2px #00fff7;
+  }
+  20% {
+    text-shadow: -2px -2px #ff00c1, 2px 2px #00fff7;
+  }
+  40% {
+    text-shadow: 2px -2px #ff00c1, -2px 2px #00fff7;
+  }
+  60% {
+    text-shadow: -2px 2px #ff00c1, 2px -2px #00fff7;
+  }
+  80% {
+    text-shadow: 2px 2px #ff00c1, -2px -2px #00fff7;
+  }
+  100% {
+    text-shadow: -2px -2px #ff00c1, 2px 2px #00fff7;
+  }
+}
+
+/* Container 1: Outer Shell */
 .home-container-1 {
   min-height: 100vh;
-  max-width: 1250px;
+  max-width: calc(100% - 550px); /* 250 (left) + 300 (right) */
   width: 100%;
+  margin-left: 250px;  /* Left sidebar width */
+  margin-right: 300px; /* Right sidebar width */
   display: flex;
   justify-content: center;
-  justify-items: center;
-  margin: 0% auto;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #1b1f3b, #0f0c29);
+  border: 2px solid #8e2de2;
+  border-radius: 20px;
+  box-shadow: 
+    0 0 30px rgba(255, 0, 255, 0.2), 
+    inset 0 0 15px rgba(0, 255, 255, 0.2),
+    0 0 80px #6f00ff55;
+  padding-bottom: 50px;
 }
 
+
+/* Container 2: Glowing Box */
 .home-container-2 {
-  max-width: 1100px;
-  width: calc(100% - 164px);
-  padding: 24px;
-  box-sizing: border-box;
+  max-width: 900px;
+  width: 100%;
+  padding: 32px;
+  background: linear-gradient(135deg, rgba(24, 22, 40, 0.95), rgba(40, 20, 50, 0.95));
+  border: 2px solid #ff00ff88;
+  border-radius: 16px;
+  box-shadow: 
+    0 0 20px #8e2de2aa,
+    inset 0 0 10px rgba(0, 255, 255, 0.1),
+    0 0 50px #ff00ff33;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(6px);
+  min-height: 100vh;
+  margin-top: 85px;
 }
 
+
+.home-container-2:hover {
+  box-shadow: 
+    0 0 30px #ff00ff,
+    0 0 20px #00fff7;
+  transform: scale(1.01) rotate(0.2deg);
+}
+
+/* Typography with animation */
+h1, h2, h3 {
+  color: #ff8efb;
+  font-weight: 700;
+  animation: glitch 1.5s infinite alternate;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+a {
+  color: #00ffe7;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #ff00ff;
+  left: 0;
+  bottom: -4px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: right;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #ff00ff99;
+}
+
+/* Responsive Adjustments */
 @media screen and (max-width: 760px) {
   .home-container-2 {
     max-width: 100%;
     width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem;
   }
 }

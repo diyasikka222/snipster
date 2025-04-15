@@ -1,27 +1,141 @@
+/* Main Navbar Container */
 .main-nav {
-  min-height: 50px;
+  min-height: 60px;
   width: 100%;
-  margin: 0% auto;
-  border-top: solid 3px #009dff;
-  box-shadow: 0px 1px 5px #00000033;
+  margin: 0 auto;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 15;
-  top: 0%;
-  left: 0%;
-  background-color: black;
+  background: linear-gradient(to right, #1c1a2e, #2b223d);
+  border-bottom: 2px solid #8e44ff;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.1), 0 0 15px rgba(140, 50, 255, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Navbar Content (Centered within main-nav) */
 .navbar {
+  width: 100%;
+  max-width: 1250px;
   height: 100%;
-  min-width: 85%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
+/* Navbar Left (Logo and Items) */
+.navbar .navbar-1 {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Logo */
+.nav-logo {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.Snipster-logo {
+  height: 45px;
+}
+
+/* Navbar Items */
+.nav-item {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffd700;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  text-shadow: 0 0 6px #ffd700aa;
+}
+
+/* Navbar Right (Search and Button Section) */
+.navbar .navbar-2 {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Search Bar */
+.navbar .navbar-1 form {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.navbar .navbar-1 form input {
+  width: 100%;
+  padding: 10px 12px 10px 40px;
+  font-size: 14px;
+  border: 1px solid #6c5b7b;
+  border-radius: 6px;
+  background-color: #1a1625;
+  color: #f0e6ff;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar .navbar-1 form input::placeholder {
+  color: #a894d8;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.navbar .navbar-1 form input:focus {
+  border-color: #c06c84;
+  box-shadow: 0 0 8px #c06c8480;
+}
+
+/* Search Icon */
+.navbar .navbar-1 form .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffd700;
+  font-size: 16px;
+  pointer-events: none;
+  text-shadow: 0 0 6px #ffd700aa;
+}
+
+/* Nav Links Button Style */
+.nav-links {
+  padding: 8px 16px;
+  border: 2px solid #ffd700;
+  border-radius: 6px;
+  background: linear-gradient(to right, #ff4e50, #f9d423);
+  color: #0b0b0f;
+  font-weight: 700;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.nav-links:hover {
+  background: #ffd700;
+  color: #1c1a2e;
+  box-shadow: 0 0 10px #ffd700aa;
+}
+
+/* Toggle icon (for small screens) */
 .slide-in-icon {
   display: none;
   transition: 0.2s;
@@ -32,81 +146,7 @@
   cursor: pointer;
 }
 
-.navbar .navbar-1 {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-grow: 1;
-}
-
-.navbar .navbar-2 {
-  display: flex;
-  align-items: center;
-}
-
-.nav-logo {
-  padding: 5px 25px;
-}
-
-.nav-item {
-  margin: 0px 3px;
-  font-size: small;
-  font-weight: 500;
-  text-decoration: none;
-  color: white;
-  transition: 0.2s;
-}
-
-.Snipster-logo{
-  height: 50px;
-}
-
-.nav-btn {
-  cursor: pointer;
-  border-radius: 20px;
-  padding: 10px 20px;
-}
-
-.nav-item:hover,
-.slide-in-icon:hover {
-  background-color: rgb(226, 226, 226);
-}
-
-.navbar .navbar-1 form {
-  flex-grow: 1;
-  padding: 0px 12px;
-  position: relative;
-}
-
-.navbar .navbar-1 form input {
-  min-width: 90%;
-  padding: 8px 1px 8px 32px;
-  font-size: 13px;
-  border: solid 1px #0000003e;
-  border-radius: 3px;
-}
-
-.navbar .navbar-1 form .search-icon {
-  position: absolute;
-  left: 25px;
-  top: 8px;
-}
-
-.nav-links {
-  padding: 7px 13px;
-  border: solid 2px white;
-  border-radius: 3px;
-  background: #355C7D;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  cursor: pointer;
-  margin-left: 0.3px;
-} 
-
-.nav-links:hover {
-  background-color: #d3e4eb;
-}
-
+/* Responsive Tweaks */
 @media screen and (max-width: 1120px) {
   .navbar .navbar-1 form {
     display: none;

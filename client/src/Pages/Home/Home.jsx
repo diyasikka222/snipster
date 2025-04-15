@@ -11,7 +11,9 @@ const Home = ({ slideIn }) => {
       <LeftSidebar slideIn={slideIn} />
       <div className="home-container-2">
         <HomeMainbar />
-        <RightSidebar />
+      </div>
+      <div className="right-sidebar">
+      <RightSidebar />
       </div>
     </div>
   );

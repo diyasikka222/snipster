@@ -1,129 +1,178 @@
+/* Question Details Page */
 .question-details-page {
   width: calc(100% - 300px - 24px);
   float: left;
   margin: 25px 0px;
   padding: 0px;
+  background-color: #121212; /* Dark background for the page */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Container for the question details */
 .question-details-container {
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.112);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  background-color: #1a1a1a; /* Dark background for container */
+  border-radius: 8px;
 }
+
+/* Second container for question details */
 .question-details-container-2 {
   display: flex;
+  flex-direction: column;
 }
+
+/* Votes section */
 .question-votes {
   padding: 5px 20px 5px 10px;
+  color: #00ff9e; /* Neon green for votes */
 }
+
 .question-votes p {
   margin: 0%;
   font-size: 25px;
   text-align: center;
 }
+
 .votes-icon {
   font-size: 40px;
   cursor: pointer;
   color: rgb(206, 203, 203);
+  transition: color 0.3s ease-in-out;
 }
+
 .votes-icon:active {
-  color: #ef8236;
+  color: #ef8236; /* Neon orange on active */
 }
+
+/* Question body styling */
 .question-details-container .question-body {
   line-height: 22px;
   white-space: pre-line;
+  color: #e1ecf4; /* Light cyan color for readability */
 }
 
+/* Tags section */
 .question-details-container .question-details-tags {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 10px;
 }
 
 .question-details-container .question-details-tags p,
 .post-ans-container p .ans-tags {
-  padding: 5px 5px;
+  padding: 5px 8px;
   margin: 3px;
-  font-size: 13px;
-  border-radius: 2px;
-  background-color: #e1ecf4;
-  color: #39739d;
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: #2b2b2b; /* Dark background for tags */
+  color: #39739d; /* Blue color for tags */
   text-decoration: none;
   line-height: 22px;
+  transition: background-color 0.3s ease;
 }
+
+.question-details-container .question-details-tags p:hover,
+.post-ans-container p .ans-tags:hover {
+  background-color: #00ff9e; /* Neon green on hover */
+  color: #121212; /* Dark text for contrast */
+}
+
+/* User actions section */
 .question-actions-user {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 15px;
 }
 
 .question-actions-user button,
 .edit-question-btn {
   background-color: transparent;
   border: none;
-  padding: 5px 0px;
+  padding: 8px 12px;
   margin: 0px 10px 0px 0px;
-  text-decoration: none;
   color: #939292;
   cursor: pointer;
   font-size: 14px;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
+
 .question-actions-user button:active {
-  border-bottom: solid 2px black;
+  border-bottom: solid 2px #00ff9e; /* Neon green underline on active */
 }
+
+/* User info and links */
 .question-actions-user div:nth-child(2) p,
 .question-actions-user div:nth-child(2) .user-link {
-  text-decoration: none;
   font-size: 14px;
+  color: #00ff9e; /* Neon green for links */
   margin: 0%;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
+
 .user-link {
   display: flex;
   align-items: center;
 }
+
 .user-link div {
   padding-left: 10px;
 }
-/* post answer container */
 
+.user-link:hover {
+  color: #ef8236; /* Neon orange on hover */
+}
+
+/* Post Answer Form */
 .post-ans-container form textarea {
-  padding: 10px;
+  padding: 12px;
   border: solid 1px rgba(0, 0, 0, 0.3);
   font-family: "Roboto", sans-serif;
   width: calc(100% - 20px);
   resize: vertical;
+  background-color: #2b2b2b; /* Dark background for the textarea */
+  color: #fff; /* Light text for contrast */
+  border-radius: 8px;
 }
 
 .post-ans-container form .post-ans-btn {
   margin: 20px 0px;
-  padding: 10px 10px;
-  background-color: #009dff;
+  padding: 12px 20px;
+  background-color: #009dff; /* Neon blue background */
   color: white;
   border: solid 1px #009dff;
   border-radius: 4px;
   cursor: pointer;
-  transition: 0.5s all;
+  transition: 0.3s all;
+  box-shadow: 0 4px 8px rgba(0, 157, 255, 0.4); /* Neon glow */
 }
 
 .post-ans-container form .post-ans-btn:hover {
-  background-color: #0086d8;
+  background-color: #0086d8; /* Darker blue on hover */
+  box-shadow: 0 6px 12px rgba(0, 157, 255, 0.6); /* Stronger glow */
 }
 
-/* Display answer container */
-
+/* Display Answer */
 .display-ans {
   padding-bottom: 20px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.112);
+  margin-top: 20px;
 }
 
 .display-ans p {
   font-size: 14px;
   line-height: 18px;
   white-space: pre-line;
+  color: #e1ecf4; /* Light cyan for answers */
 }
 
+/* Media query for smaller screens */
 @media screen and (max-width: 1020px) {
   .question-details-page {
     width: calc(100% - 24px);

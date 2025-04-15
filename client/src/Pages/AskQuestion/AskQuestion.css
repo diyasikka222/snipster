@@ -1,55 +1,105 @@
+/* Main container for the ask question page */
 .ask-question {
   min-height: 80vh;
-  background-color: #f1f2f3;
+  background-color: #121212; /* Dark background for cyberpunk aesthetic */
+  color: white; /* Light text for contrast */
 }
 
+/* Container for the question form */
 .ask-ques-container {
   margin: auto;
   padding: 0px 20px 20px 20px;
   max-width: 1200px;
 }
 
+/* Heading for the form */
 .ask-ques-container h1 {
   padding: 80px 0px 20px 0px;
+  font-size: 32px;
+  text-align: center;
+  color: #00ff9e; /* Neon green */
+  text-shadow: 0 4px 12px rgba(0, 255, 158, 0.6); /* Glow effect */
 }
 
+/* Form container */
 .ask-ques-container form .ask-form-container {
   padding: 20px;
-  background-color: white;
-  border-radius: 3px;
-  box-shadow: 0 10px 25px rgb(0 0 0 / 5%), 0 20px 48px rgb(0 0 0 / 5%),
-    0 1px 4px rgb(0 0 0 / 10%);
+  background-color: #1a1a1a; /* Dark background */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 255, 158, 0.4); /* Neon glow shadow */
+  transition: box-shadow 0.3s ease-in-out;
 }
 
+/* Hover effect for form container */
+.ask-form-container:hover {
+  box-shadow: 0 8px 20px rgba(0, 255, 158, 0.7), 0 0 35px rgba(0, 255, 158, 0.5); /* Stronger glow on hover */
+}
+
+/* Form label styling */
 .ask-form-container label h4 {
-  margin-bottom: 0%;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #00ff9e; /* Neon green */
+  text-shadow: 0 2px 6px rgba(0, 255, 158, 0.5); /* Soft glow */
 }
 
+/* Form label description */
 .ask-form-container label p {
   margin: 0%;
   font-size: 13px;
   padding: 3px 0px;
+  color: #ccc; /* Light gray for text */
 }
 
+/* Input and textarea styles */
 .ask-form-container label input,
 .ask-form-container label textarea {
-  padding: 10px;
-  border: solid 1px #0000003e;
+  padding: 12px;
+  border: solid 1px #00ff9e; /* Neon border */
   font-family: "Roboto", sans-serif;
-  width: calc(100% - 20px);
+  width: calc(100% - 24px); /* Padding adjustments */
   resize: none;
+  background-color: #333; /* Dark input background */
+  color: white;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 255, 158, 0.2); /* Neon glow effect */
+  transition: box-shadow 0.3s ease, border 0.3s ease;
 }
 
+/* Focus effect for input fields */
+.ask-form-container label input:focus,
+.ask-form-container label textarea:focus {
+  box-shadow: 0 0 15px rgba(0, 255, 158, 0.6); /* Stronger neon glow when focused */
+  border: solid 1px #00ff9e;
+}
+
+/* Review button styling */
 .review-btn {
   margin: 50px 0px;
-  padding: 10px;
-  background-color: #009dff;
-  border: solid 1px #009dff;
+  padding: 12px 24px;
+  background-color: #ff007c; /* Neon pink */
+  border: solid 1px #ff007c;
   color: white;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(255, 0, 124, 0.4); /* Glowing pink effect */
 }
+
+/* Hover effect for the review button */
 .review-btn:hover {
-  background-color: #0086d8;
+  background-color: #e6006c; /* Darker neon pink */
+  box-shadow: 0 6px 12px rgba(255, 0, 124, 0.6); /* Stronger pink glow on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Button disabled state */
+.review-btn:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+/* Overall button glow */
+.review-btn, .ask-form-container label input, .ask-form-container label textarea {
+  transition: all 0.3s ease-in-out;
 }

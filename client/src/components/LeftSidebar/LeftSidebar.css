@@ -1,26 +1,29 @@
+/* Sidebar */
 .left-sidebar {
-    width: 200px;
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
-    background-color: black;
-    height: auto;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #1a1a1a; /* Darker background for a techy vibe */
+    height: 100%;
     min-height: 100vh;
-    transition:
-        box-shadow ease-in-out 0.1s,
-        transform ease-in-out 0.1s;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     box-sizing: border-box;
-    font-size: 13px;
+    font-size: 14px;
     color: white;
     position: fixed;
     left: 0;
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Orbitron', sans-serif; /* Cyberpunk font */
 }
 
+/* Button style */
 .nav-btn {
     background-color: inherit;
     width: 100%;
     border: none;
-    padding: 0%;
+    padding: 0;
 }
 
+/* AI Button */
 .ai-btn {
     background-color: inherit;
     margin-left: 10px;
@@ -29,41 +32,73 @@
     height: 60px;
     width: 90%;
     border: none;
-    padding: 0%;
-    background-image: linear-gradient(
-        43deg,
-        #4158d0 0%,
-        #c850c0 46%,
-        #ffcc70 100%
-    );
+    padding: 0;
+    background-image: linear-gradient(45deg, #ff0088, #00c6ff, #ffcc00); /* Neon Gradient */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
+.ai-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Sidebar Navigation */
 .side-nav {
     height: auto;
     max-width: 100%;
     position: sticky;
-    margin: 50px 0px;
-    padding: 20px 0px;
+    margin: 50px 0;
+    padding: 20px 0;
 }
 
+/* Navigation Div */
 .side-nav-div {
-    padding: 10px 0px;
+    padding: 10px 0;
 }
 
-.side-nav-div div {
-    padding-left: 10px;
-}
-
+/* Links */
 .side-nav-links {
     text-decoration: none;
     color: white;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 10px;
-    transition: 0.2s;
+    padding-left: 15px;
+    font-size: 16px;
+    transition: 0.3s;
+    position: relative;
 }
 
+.side-nav-links::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ff0088; /* Neon accent */
+    transition: width 0.3s;
+}
+
+/* Hover effect on Links */
+.side-nav-links:hover {
+    background: rgba(255, 0, 136, 0.1); /* Light pink hover effect */
+    color: #ff0088;
+}
+
+.side-nav-links:hover::after {
+    width: 100%;
+}
+
+/* Active link */
+.active {
+    font-weight: bolder;
+    color: white;
+    background: rgba(0, 198, 255, 0.1); /* Neon cyan background */
+    border-right: 3px solid #00c6ff; /* Neon cyan border */
+}
+
+/* Side Nav AI (for buttons or links related to AI) */
 .side-nav-ai {
     text-decoration: none;
     color: white;
@@ -71,50 +106,16 @@
     align-items: center;
     justify-content: center;
     padding-left: 0;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
+/* Hover effect for AI Button */
 .side-nav-ai:hover {
-    color: rgb(255, 255, 255, 1);
+    color: #ff0088;
     transform: scale(1.1) translateY(-3px);
 }
 
-.side-nav-links:hover {
-    background: #355c7d; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-        to right,
-        #c06c84,
-        #6c5b7b,
-        #355c7d
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to right,
-        #c06c84,
-        #6c5b7b,
-        #355c7d
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.active {
-    font-weight: bolder;
-    color: white;
-    background: #355c7d; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-        to right,
-        #c06c84,
-        #6c5b7b,
-        #355c7d
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to right,
-        #c06c84,
-        #6c5b7b,
-        #355c7d
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    border-right: solid 3px #009dff;
-}
-
+/* Media Query for Mobile */
 @media screen and (max-width: 760px) {
     .left-sidebar {
         position: absolute;

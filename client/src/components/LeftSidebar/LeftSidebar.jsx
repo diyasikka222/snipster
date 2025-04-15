@@ -60,7 +60,7 @@ const LeftSidebar = ({ slideIn, handleSlideIn }) => {
           </button>
           <button onClick={() => handleSlideIn()} className="ai-btn">
             <NavLink
-              to="/askAi"
+              to="/ai-ask"
               className="side-nav-ai"
               activeclassname="active"
             >

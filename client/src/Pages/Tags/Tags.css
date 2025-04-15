@@ -1,36 +1,78 @@
+/* Heading for tags section */
 .tags-h1 {
   margin-top: 50px;
   font-weight: 400;
+  font-size: 32px;
+  color: #00ff9e; /* Neon green for heading */
+  text-align: center;
+  text-shadow: 0 4px 8px rgba(0, 255, 158, 0.6); /* Neon glow effect */
 }
 
+/* Paragraph under tags heading */
 .tags-p {
   margin: 0px;
   font-size: 15px;
+  color: #e1ecf4; /* Light cyan for paragraph text */
+  text-align: center;
+  margin-bottom: 20px;
 }
 
+/* Container for the tag list */
 .tags-list-container {
   padding: 30px 0px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
+  gap: 15px;
+  background-color: #121212; /* Dark background for container */
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
 }
 
+/* Individual tag styling */
 .tag {
-  padding: 10px;
-  border: solid 1px #d2d2d2;
-  border-radius: 2px;
+  padding: 12px;
+  border: solid 1px #444;
+  border-radius: 8px;
+  background-color: #1a1a1a; /* Dark background for tags */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
 }
 
+.tag:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 15px rgba(0, 255, 158, 0.6); /* Neon glow on hover */
+}
+
+/* Tag heading styling */
 .tag h5 {
   display: inline-block;
-  margin: 10px 0px;
-  padding: 5px 5px;
-  background-color: #e1ecf4;
-  color: #39739d;
+  margin: 0px 0px 10px 0px;
+  padding: 5px 8px;
+  background-color: #00ff9e; /* Neon green background */
+  color: #121212; /* Dark text on bright background */
+  font-size: 16px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Tag paragraph styling */
 .tag p {
   font-size: 14px;
-  color: #323232;
-  line-height: 17px;
+  color: #e1ecf4; /* Light text for contrast */
+  line-height: 18px;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* Tag hover effects */
+.tag:hover h5 {
+  background-color: #ef8236; /* Neon orange background on hover */
+  color: #121212; /* Dark text on hover */
+}
+
+.tag:hover p {
+  color: #00ff9e; /* Neon green text on hover */
 }

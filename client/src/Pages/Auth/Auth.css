@@ -1,21 +1,29 @@
+/* Main section for authentication */
 .auth-section {
   min-height: 100vh;
   margin: 0% auto;
-  background-color: #f1f2f3;
+  background-color: #121212; /* Dark background for cyberpunk look */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Auth container 1 (Logo or left side) */
 .auth-container-1 {
   padding: 20px;
   margin-right: 30px;
 }
 
+/* Logo styling */
 .login-logo {
   padding: 20px 30px;
+  color: #00ff9e; /* Neon green */
+  font-size: 36px;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0, 255, 158, 0.6); /* Glow effect */
 }
 
+/* Auth container 2 (Form container) */
 .auth-container-2 {
   min-width: 20%;
   display: flex;
@@ -24,72 +32,111 @@
   align-items: center;
 }
 
+/* Form styling */
 .auth-container-2 form {
   width: 100%;
   padding: 20px;
-  background-color: white;
-  border-radius: 10px;
+  background-color: #1a1a1a; /* Dark background for form */
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  box-shadow: 0 10px 25px rgb(0 0 0 / 5%), 0 20px 48px rgb(0 0 0 / 5%),
-    0 1px 4px rgb(0 0 0 / 10%);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 255, 158, 0.4); /* Neon glow */
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-.auth-container-2 form p {
-  word-wrap: break-word;
+/* Hover effect for form */
+.auth-container-2 form:hover {
+  box-shadow: 0 8px 20px rgba(0, 255, 158, 0.7), 0 0 35px rgba(0, 255, 158, 0.5); /* Stronger glow on hover */
 }
 
-.auth-container-2 form label input {
-  padding: 10px;
-  width: calc(100% - 30px);
-  border: solid 1px #0000003e;
-  font-size: 13px;
-}
-
-.auth-container-2 form label:nth-child(1) h4,
-.auth-container-2 form label:nth-child(2) h4,
-.auth-container-2 form label:nth-child(3) h4 {
+/* Form labels */
+.auth-container-2 form label h4 {
   margin-bottom: 5px;
   margin-top: 10px;
+  font-size: 14px;
+  color: #00ff9e; /* Neon green for labels */
+  text-shadow: 0 2px 6px rgba(0, 255, 158, 0.5); /* Glow effect */
 }
 
+/* Form input fields */
+.auth-container-2 form label input {
+  padding: 12px;
+  width: calc(100% - 30px);
+  border: solid 1px #00ff9e; /* Neon green border */
+  font-size: 14px;
+  background-color: #333; /* Dark input background */
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 255, 158, 0.2); /* Neon glow */
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+/* Focus effect for input fields */
+.auth-container-2 form label input:focus {
+  box-shadow: 0 0 15px rgba(0, 255, 158, 0.6); /* Stronger neon glow */
+  border: solid 1px #00ff9e;
+}
+
+/* Checkbox styling */
 .auth-container-2 form label:nth-child(4) {
   display: flex;
+  align-items: center;
 }
 
+/* Styling the checkbox input */
 .auth-container-2 form label:nth-child(4) input {
   width: 15%;
   margin: 13px 0px;
 }
 
+/* Auth button (submit button) */
 .auth-btn {
   margin-top: 10px;
-  padding: 10px 5px;
-  background-color: #009dff;
-  border: solid 1px #009dff;
+  padding: 12px 24px;
+  background-color: #ff007c; /* Neon pink background */
+  border: solid 1px #ff007c;
   color: white;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.2s;
-  font-size: 13px;
+  transition: 0.3s ease-in-out;
+  font-size: 14px;
   font-weight: 500;
+  box-shadow: 0 4px 8px rgba(255, 0, 124, 0.4); /* Glowing effect */
 }
 
+/* Hover effect for the auth button */
 .auth-btn:hover {
-  background-color: #018ce3;
+  background-color: #e6006c; /* Darker pink on hover */
+  box-shadow: 0 6px 12px rgba(255, 0, 124, 0.6); /* Stronger pink glow */
+  transform: scale(1.05); /* Slight zoom effect */
 }
 
+/* Button disabled state */
+.auth-btn:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+/* Handle switch button (login/signup toggle) */
 .handle-switch-btn {
   background-color: transparent;
-  color: #007ac6;
+  color: #00ff9e; /* Neon green for the link */
   border: none;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
+/* Hover effect for handle switch button */
+.handle-switch-btn:hover {
+  color: #00e6b8; /* Lighter neon green on hover */
+  text-decoration: underline;
+}
+
+/* Media query for smaller screens */
 @media screen and (max-width: 820px) {
   .auth-container-1 {
-    display: none;
+    display: none; /* Hide left container on small screens */
   }
 }

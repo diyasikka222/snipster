@@ -1,24 +1,53 @@
+/* User list container */
 .user-list-container {
   padding: 30px 0px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 30px;
+  background-color: #121212; /* Dark background for contrast */
 }
 
+/* User profile link styling */
 .user-profile-link {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   text-decoration: none;
-  color: black;
+  color: white; /* White text for contrast */
+  transition: transform 0.3s ease;
 }
 
+/* Profile icon */
 .user-profile-link h3 {
   padding: 10px 13px;
-  background-color: #d3d3d3;
+  background-color: #00ff9e; /* Neon green background for profile icon */
   border-radius: 50%;
+  color: black; /* Dark text inside the icon */
+  font-size: 20px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
+/* Hover effect for profile icon */
+.user-profile-link h3:hover {
+  background-color: #ef8236; /* Neon orange hover effect */
+  transform: scale(1.1); /* Slight scale-up effect */
+}
+
+/* Profile name (h5) */
 .user-profile-link h5 {
   margin: 0px 10px;
+  font-size: 16px;
+  color: #e1ecf4; /* Light blue text for contrast */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for profile name */
+.user-profile-link:hover h5 {
+  color: #00ff9e; /* Neon green text on hover */
+}
+
+/* Adding subtle hover effect to entire profile link */
+.user-profile-link:hover {
+  transform: translateY(-3px); /* Slight lift effect */
 }
