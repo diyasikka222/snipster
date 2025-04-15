@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import decode from "jwt-decode";
 
 import logo from "../../assets/Snipster-logo.png";
-import search from "../../assets/search-solid.svg";
+import search from "../../assets/search.png";
 import Avatar from "../../components/Avatar/Avatar";
 import "./Navbar.css";
 import { setCurrentUser } from "../../actions/currentUser";
@@ -42,9 +42,12 @@ const Navbar = ({ handleSlideIn }) => {
           <Link to="/" className="nav-item nav-logo">
             <img src={logo} alt="logo" className="Snipster-logo" />
           </Link>
-          <Link to="/" className="nav-item nav-btn res-nav">
+          <NavLink to="/about" className="nav-item nav-btn res-nav">
             About
           </Link>
+          <Link to="/Tags" className="nav-item nav-btn res-nav">
+            Community
+          </NavLink>
           <Link to="/" className="nav-item nav-btn res-nav">
             Products
           </Link>

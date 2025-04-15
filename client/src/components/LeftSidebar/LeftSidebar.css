@@ -1,18 +1,21 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+/* Global reset for consistent styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Sidebar */
 .left-sidebar {
-    width: 250px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    background-color: #1a1a1a; /* Darker background for a techy vibe */
-    height: 100%;
-    min-height: 100vh;
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-    box-sizing: border-box;
-    font-size: 14px;
-    color: white;
+    width: 260px;
+    height: 100vh;
     position: fixed;
     left: 0;
     border-right: 2px solid rgba(255, 255, 255, 0.1);
-    font-family: 'Orbitron', sans-serif; /* Cyberpunk font */
+    font-family: 'Orbitron'; /* Cyberpunk font */
 }
 
 /* Button style */
@@ -21,6 +24,7 @@
     width: 100%;
     border: none;
     padding: 0;
+    font-family: 'Orbitron'; /* Cyberpunk font */
 }
 
 /* AI Button */
@@ -36,6 +40,7 @@
     background-image: linear-gradient(45deg, #ff0088, #00c6ff, #ffcc00); /* Neon Gradient */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
+    font-family: 'Orbitron'; /* Cyberpunk font */
 }
 
 .ai-btn:hover {
@@ -60,66 +65,112 @@
 .side-nav-links {
     text-decoration: none;
     color: white;
+    top: 0;
+    background: #0d0d0d;
+    font-family: 'Orbitron', sans-serif;
+    color: #e0e0e0;
+    border-right: 1px solid rgba(0, 255, 255, 0.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.06);
+    padding-top: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 15px;
-    font-size: 16px;
-    transition: 0.3s;
-    position: relative;
 }
 
-.side-nav-links::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #ff0088; /* Neon accent */
-    transition: width 0.3s;
-}
-
-/* Hover effect on Links */
-.side-nav-links:hover {
-    background: rgba(255, 0, 136, 0.1); /* Light pink hover effect */
-    color: #ff0088;
-}
-
-.side-nav-links:hover::after {
-    width: 100%;
-}
-
-/* Active link */
-.active {
-    font-weight: bolder;
-    color: white;
-    background: rgba(0, 198, 255, 0.1); /* Neon cyan background */
-    border-right: 3px solid #00c6ff; /* Neon cyan border */
-}
-
-/* Side Nav AI (for buttons or links related to AI) */
-.side-nav-ai {
-    text-decoration: none;
-    color: white;
+/* AI Button – Futuristic + Glassy */
+.ai-btn {
+    width: 85%;
+    height: 42px;
+    margin: 20px 0;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    color: #00f0ff;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 0;
-    transition: 0.3s;
+    box-shadow: inset 0 0 6px rgba(0, 240, 255, 0.1);
 }
 
-/* Hover effect for AI Button */
-.side-nav-ai:hover {
-    color: #ff0088;
-    transform: scale(1.1) translateY(-3px);
+.ai-btn:hover {
+    background: rgba(0, 240, 255, 0.1);
+    color: white;
+    transform: translateY(-1px) scale(1.03);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
 }
 
-/* Media Query for Mobile */
+/* Sidebar Navigation Container */
+.side-nav {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Sidebar Link Buttons */
+.side-nav-links {
+    width: 85%;
+    text-decoration: none;
+    color: #b3b3b3;
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    transition: all 0.25s ease-in-out;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.side-nav-links:hover {
+    background: rgba(0, 240, 255, 0.07);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    color: #00f0ff;
+    transform: scale(1.02);
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.08);
+}
+
+/* Active link styling */
+.active {
+    background: rgba(255, 0, 204, 0.08);
+    color: #ff00cc;
+    border: 1px solid rgba(255, 0, 204, 0.3);
+    box-shadow: 0 0 12px rgba(255, 0, 204, 0.1);
+}
+
+/* Optional section header text */
+.section-title {
+    font-size: 12px;
+    color: #888;
+    margin-top: 20px;
+    padding-left: 24px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive - Sidebar hidden on mobile by default */
 @media screen and (max-width: 760px) {
     .left-sidebar {
         position: absolute;
         transform: translateX(-100%);
-        z-index: 10;
+        z-index: 999;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .left-sidebar.open {
+        transform: translateX(0);
     }
 }
