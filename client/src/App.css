@@ -8,7 +8,8 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow:scroll; /* Prevent any scrolling beyond the viewport */
+  height: 100vh;
 }
 
 /* Glitch Text Effect */

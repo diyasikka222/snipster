@@ -2,29 +2,41 @@
 .ask-ai-container {
   width: 100%;
   max-width: 800px;
-  height: calc(100vh - 80px); /* Leaves space for navbar */
-  margin: 80px auto 0 auto; /* Top margin for navbar */
+  height: calc(100vh - 160px); /* Adjusted to account for heading height */
+  margin: 20px auto 20px auto;
   padding: 0;
-  background-color: #121212; /* Darker background for a more immersive feel */
-  border-radius: 16px; /* Smooth rounded corners */
+  background-color: #121212;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(77, 255, 176, 0.5); /* Neon glow around the container */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(77, 255, 176, 0.5);
   overflow: hidden;
-  font-family: 'Orbitron', sans-serif; /* Cyberpunk font */
+  font-family: 'Orbitron', sans-serif;
   position: relative;
   z-index: 10;
-  animation: containerGlow 1.5s ease-in-out infinite alternate; /* Glowing animation for the container */
+  animation: containerGlow 1.5s ease-in-out infinite alternate;
 }
 
 /* Glowing animation for the container */
 @keyframes containerGlow {
   0% {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(77, 255, 176, 0.5); /* Soft green glow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(77, 255, 176, 0.5);
   }
   100% {
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 0, 124, 0.7); /* Stronger pink glow */
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 0, 124, 0.7);
   }
+}
+
+/* Heading above the chat container */
+.aiester-heading {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #00f0ff;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
 }
 
 /* Scrollable chat area */
@@ -34,10 +46,10 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  background-color: #1a1a1a; /* Dark background for the chat window */
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+  /* gap: 16px; */
+  background-color: #1a1a1a;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* User and AI messages */
@@ -56,28 +68,25 @@
   transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
 }
 
-/* User's message */
 .message.user {
   align-self: flex-end;
-  background: linear-gradient(135deg, #4dffb0, #00c6ff); /* Neon gradient */
+  background: linear-gradient(135deg, #4dffb0, #00c6ff);
   color: #000;
-  border-radius: 16px 16px 4px 16px; /* Rounded corners */
-  box-shadow: 0 4px 18px rgba(77, 255, 176, 0.5); /* Neon glow with stronger effect */
-  animation: userMessageGlow 1.5s ease-in-out infinite alternate; /* Glowing animation */
+  border-radius: 16px 16px 4px 16px;
+  box-shadow: 0 4px 18px rgba(77, 255, 176, 0.5);
+  animation: userMessageGlow 1.5s ease-in-out infinite alternate;
 }
 
-/* AI's message */
 .message.ai {
   align-self: flex-start;
-  background: #1a1a1a; /* Dark background */
+  background: #1a1a1a;
   color: white;
-  border-radius: 16px 16px 4px 4px; /* Rounded corners */
+  border-radius: 16px 16px 4px 4px;
   border: 1px solid #444;
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Light shadow */
-  animation: aiMessageGlow 1.5s ease-in-out infinite alternate; /* Glowing animation */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  animation: aiMessageGlow 1.5s ease-in-out infinite alternate;
 }
 
-/* Glowing animation for the user's message */
 @keyframes userMessageGlow {
   0% {
     box-shadow: 0 4px 12px rgba(77, 255, 176, 0.3);
@@ -87,7 +96,6 @@
   }
 }
 
-/* Glowing animation for the AI's message */
 @keyframes aiMessageGlow {
   0% {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
@@ -97,10 +105,9 @@
   }
 }
 
-/* Add slight hover effect on messages */
 .message:hover {
   transform: scale(1.02);
-  box-shadow: 0 6px 18px rgba(0, 198, 255, 0.4); /* Neon blue glow on hover */
+  box-shadow: 0 6px 18px rgba(0, 198, 255, 0.4);
 }
 
 /* Input area at the bottom */
@@ -108,7 +115,7 @@
   display: flex;
   padding: 16px;
   border-top: 1px solid #444;
-  background-color: #121212; /* Dark input area */
+  background-color: #121212;
   gap: 10px;
   position: relative;
   z-index: 10;
@@ -124,34 +131,32 @@
   resize: none;
   outline: none;
   height: 50px;
-  background-color: #333; /* Dark input background */
+  background-color: #333;
   color: white;
-  box-shadow: 0 4px 10px rgba(77, 255, 176, 0.3); /* Glowing neon effect */
+  box-shadow: 0 4px 10px rgba(77, 255, 176, 0.3);
   transition: all 0.3s ease-in-out;
 }
 
-/* Glowing effect on input field when focused */
 .ask-ai-input:focus {
-  box-shadow: 0 0 15px rgba(77, 255, 176, 0.6); /* Stronger glow when focused */
+  box-shadow: 0 0 15px rgba(77, 255, 176, 0.6);
   background-color: #444;
 }
 
-/* Button with cyberpunk look */
 .ask-ai-button {
   padding: 12px 24px;
-  background-color: #ff007c; /* Neon pink */
+  background-color: #ff007c;
   color: white;
   font-size: 16px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(255, 0, 124, 0.4); /* Glowing pink effect */
+  box-shadow: 0 4px 10px rgba(255, 0, 124, 0.4);
 }
 
 .ask-ai-button:hover {
-  transform: scale(1.1); /* Hover effect for button */
-  box-shadow: 0 6px 18px rgba(255, 0, 124, 0.6); /* Enhanced glow on hover */
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(255, 0, 124, 0.6);
 }
 
 .ask-ai-button:disabled {
@@ -161,13 +166,13 @@
 
 /* Error message */
 .error {
-  color: #ff007c; /* Neon pink for error message */
+  color: #ff007c;
   text-align: center;
   padding: 10px;
   font-size: 14px;
   background-color: rgba(255, 0, 124, 0.1);
   border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(255, 0, 124, 0.3); /* Glowing error effect */
+  box-shadow: 0 4px 8px rgba(255, 0, 124, 0.3);
 }
 
 /* Notification click area */
@@ -175,12 +180,13 @@
   margin-bottom: 80px;
 }
 
-/* Animation effects for button and input */
-.ask-ai-button, .ask-ai-input {
+/* Smooth transitions */
+.ask-ai-button,
+.ask-ai-input {
   transition: all 0.3s ease-in-out;
 }
 
-/* Glowing effect on hover for the chat window */
+/* Chat window hover effect */
 .chat-window:hover {
-  box-shadow: 0 6px 18px rgba(77, 255, 176, 0.5); /* Neon glow effect */
+  box-shadow: 0 6px 18px rgba(77, 255, 176, 0.5);
 }

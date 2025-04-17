@@ -6,12 +6,11 @@ import "react-toastify/dist/ReactToastify.css";
 const AskAI = () => {
   const [prompt, setPrompt] = useState("");
   const [loading, setLoading] = useState(false);
-  const [messages, setMessages] = useState([]); // Stores both user and AI messages
+  const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
 
   const chatRef = useRef(null);
 
-  // Scroll to bottom on new message
   useEffect(() => {
     chatRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -62,37 +61,45 @@ const AskAI = () => {
   };
 
   return (
-    <div className="ask-ai-container">
-      <div className="chat-window">
-        {messages.map((msg, index) => (
-          <div key={index} className={`message ${msg.role}`}>
-            {msg.text}
-          </div>
-        ))}
-        <div ref={chatRef} />
-      </div>
+    <>
+      <h2 className="aiester-heading">AIester - AI That Thinks in Syntax</h2> {/* ✨ Heading added above the container */}
 
-      {error && <div className="error">{error}</div>}
+      <div className="ask-ai-container">
+        <div className="chat-window">
+          {messages.map((msg, index) => (
+            <div key={index} className={`message ${msg.role}`}>
+              {msg.text}
+            </div>
+          ))}
+          <div ref={chatRef} />
+        </div>
 
-      <div className="input-area">
-        <textarea
-          placeholder="Type your question..."
-          value={prompt}
-          onChange={handleChange}
-          className="ask-ai-input"
-          rows="1"
+        {error && <div className="error">{error}</div>}
+
+        <div className="input-area">
+          <textarea
+            placeholder="Type your question..."
+            value={prompt}
+            onChange={handleChange}
+            className="ask-ai-input"
+            rows="1"
+          />
+          <button
+            className="ask-ai-button"
+            onClick={handleAskAI}
+            disabled={loading || !prompt.trim()}
+          >
+            {loading ? "..." : "Send"}
+          </button>
+        </div>
+
+        <ToastContainer
+          className="click-noti"
+          position="bottom-center"
+          autoClose={3000}
         />
-        <button
-          className="ask-ai-button"
-          onClick={handleAskAI}
-          disabled={loading || !prompt.trim()}
-        >
-          {loading ? "..." : "Send"}
-        </button>
       </div>
-
-      <ToastContainer className="click-noti" position="bottom-center" autoClose={3000} />
-    </div>
+    </>
   );
 };
 

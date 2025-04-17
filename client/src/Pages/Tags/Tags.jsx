@@ -10,7 +10,7 @@ const Tags = ({ slideIn, handleSlideIn }) => {
     <div className="home-container-1">
       <LeftSidebar slideIn={slideIn} handleSlideIn={handleSlideIn} />
       <div className="home-container-2">
-        <h1 className="tags-h1">Tags</h1>
+        <h1 className="tags-h1">Tags/Communities</h1>
         <p className="tags-p">
           A tag is a keyword or label that categorizes your question with other,
           similar questions.

@@ -44,8 +44,8 @@ const Navbar = ({ handleSlideIn }) => {
           </Link>
           <NavLink to="/about" className="nav-item nav-btn res-nav">
             About
-          </Link>
-          <Link to="/Tags" className="nav-item nav-btn res-nav">
+          </NavLink>
+          <NavLink to="/Tags" className="nav-item nav-btn res-nav">
             Community
           </NavLink>
           <Link to="/" className="nav-item nav-btn res-nav">
