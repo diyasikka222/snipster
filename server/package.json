@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Manoj Kumar",
+  "author": "Sidharth and Diya",
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.24.0",
