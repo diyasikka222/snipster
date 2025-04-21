@@ -9,7 +9,7 @@ import DisplayQuestion from "./Pages/Questions/DisplayQuestion";
 import Tags from "./Pages/Tags/Tags";
 import Users from "./Pages/Users/Users";
 import UserProfile from "./Pages/UserProfile/UserProfile";
-import AskAI from "./Pages/ai-ask/askAi"; // ✅ Make sure path is correct
+import AskAI from "./Pages/ai-ask/askAi";
 
 const AllRoutes = ({ slideIn, handleSlideIn }) => {
   return (

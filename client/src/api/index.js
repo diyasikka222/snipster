@@ -3,7 +3,7 @@ import axios from "axios";
 // baseURL: "http://localhost:5000/"
 
 const API = axios.create({
-  baseURL: "http://localhost:5001/",
+  baseURL: "https://snipster-backend.onrender.com",
 });
 
 API.interceptors.request.use((req) => {
