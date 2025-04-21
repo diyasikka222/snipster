@@ -41,7 +41,7 @@ app.post("/genai", async (req, res) => {
 const PORT = process.env.PORT || 5001;
 
 app.get("/", (req, res) => {
-  res.send("Snipster backend is running 🚀");
+  res.send("Snipster backend is running");
 });
 
 app.listen(PORT, () => {

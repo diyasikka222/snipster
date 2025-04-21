@@ -10,6 +10,7 @@ import Tags from "./Pages/Tags/Tags";
 import Users from "./Pages/Users/Users";
 import UserProfile from "./Pages/UserProfile/UserProfile";
 import AskAI from "./Pages/ai-ask/askAi";
+import About from "./Pages/About/about";
 
 const AllRoutes = ({ slideIn, handleSlideIn }) => {
   return (
@@ -45,7 +46,7 @@ const AllRoutes = ({ slideIn, handleSlideIn }) => {
         }
       />
       <Route path="/ai-ask" element={<AskAI />} />
-      <Route path="/about" element={<about />} />
+      <Route path="/about" element={<About />} />
     </Routes>
   );
 };
