@@ -35,7 +35,7 @@ const about = () => {
         </div>
 
         <div className="about-footer">
-          Built by <span className="about-author">Coders </span> · 2025
+          Built by <span className="about-author">Coders </span> · 2025 
         </div>
       </div>
     </section>

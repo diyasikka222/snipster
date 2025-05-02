@@ -25,6 +25,7 @@
   align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
+  position: relative; /* Added for positioning mobile menu */
 }
 
 /* Navbar Left (Logo and Items) */
@@ -32,6 +33,7 @@
   display: flex;
   align-items: center;
   gap: 24px;
+  height: 100%;
 }
 
 /* Logo */
@@ -39,6 +41,7 @@
   padding: 0 10px;
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .Snipster-logo {
@@ -69,6 +72,7 @@
   display: flex;
   align-items: center;
   gap: 24px;
+  height: 100%;
 }
 
 /* Search Bar */
@@ -127,6 +131,9 @@
   font-weight: 700;
   transition: 0.3s;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .nav-links:hover {
@@ -144,23 +151,116 @@
   background-color: inherit;
   border: none;
   cursor: pointer;
+  z-index: 20;
 }
 
 /* Responsive Tweaks */
 @media screen and (max-width: 1120px) {
   .navbar .navbar-1 form {
-    display: none;
+    display: none; /* Hide search form on smaller screens */
   }
 }
 
 @media screen and (max-width: 760px) {
+  .navbar {
+    flex-direction: column; /* Stack navbar elements vertically on small screens */
+    align-items: flex-start; /* Align items to the start (top) */
+  }
+  .navbar .navbar-1 {
+    flex-direction: row; /* Keep logo and toggle on same row */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .navbar .navbar-2 {
+    width: 100%;
+    justify-content: space-around;
+  }
   .slide-in-icon {
-    display: block;
+    display: block; /* Show toggle icon on small screens */
+  }
+  .navbar-1 .res-nav {
+    display: none;
+  }
+  .navbar-1 form {
+    display: none;
   }
 }
 
 @media screen and (max-width: 620px) {
-  .navbar .navbar-1 .res-nav {
-    display: none;
+  .navbar .navbar-2 {
+    flex-direction: column;
+    gap: 10px;
   }
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #1c1a2e;
+  border-bottom: 2px solid #8e44ff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 10;
+}
+
+.mobile-menu .nav-item {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 0;
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid #8e44ff;
+}
+.mobile-menu .nav-item:last-child{
+    border-bottom: none;
+}
+.mobile-menu .nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  text-shadow: 0 0 6px #ffd700aa;
+}
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+.search-form input{
+  width: 100%;
+  padding: 10px 12px 10px 40px;
+  font-size: 14px;
+  border: 1px solid #6c5b7b;
+  border-radius: 6px;
+  background-color: #1a1625;
+  color: #f0e6ff;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+.search-form input::placeholder {
+  color: #a894d8;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.search-form input:focus {
+  border-color: #c06c84;
+  box-shadow: 0 0 8px #c06c8480;
+}
+.search-form .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffd700;
+  font-size: 16px;
+  pointer-events: none;
+  text-shadow: 0 0 6px #ffd700aa;
 }

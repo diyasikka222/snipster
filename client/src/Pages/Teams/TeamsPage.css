@@ -1,0 +1,106 @@
+/* TeamPage.css */
+.team-page {
+    background: linear-gradient(135deg, #0f0f0f, #1a0026);
+    color: #00ffea;
+    min-height: 100vh;
+    padding: 2rem;
+    margin-top: 50px;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .creams-desc {
+    background: linear-gradient(135deg, #0f0f0f, #1a0026);
+    color: #00ffea;
+    font-size: 20px;
+    padding: 30px;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .team-page h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 5px #ff00cc;
+  }
+  
+  .team-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .team-card {
+    background: rgba(0, 255, 255, 0.08);
+    border: 1px solid #00ffee;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 0 15px #00ffff33;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00ffffaa;
+  }
+  
+  .team-card h2 {
+    color: #ff00cc;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .team-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .team-card button {
+    background: transparent;
+    border: 1px solid #ff00cc;
+    color: #ff00cc;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .team-card button:hover {
+    background: #ff00cc33;
+    color: #fff;
+  }
+  
+  .create-team {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .create-team input {
+    padding: 0.5rem 1rem;
+    background: #1a0026;
+    color: #00ffee;
+    border: 1px solid #00ffee;
+    border-radius: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+  }
+  
+  .create-team button {
+    background: transparent;
+    border: 1px solid #00ffee;
+    color: #00ffee;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .create-team button:hover {
+    background: #00ffee33;
+  }
+  
+

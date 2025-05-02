@@ -48,12 +48,12 @@ const Navbar = ({ handleSlideIn }) => {
           <NavLink to="/Tags" className="nav-item nav-btn res-nav">
             Community
           </NavLink>
-          <Link to="/" className="nav-item nav-btn res-nav">
+          <NavLink to="/products" className="nav-item nav-btn res-nav">
             Products
-          </Link>
-          <Link to="/" className="nav-item nav-btn res-nav">
-            For Teams
-          </Link>
+          </NavLink>
+          <NavLink to="/Creams" className="nav-item nav-btn res-nav">
+            Creams
+          </NavLink>
           <form>
             <input type="text" placeholder="Search..." />
             <img src={search} alt="search" width="18" className="search-icon" />

@@ -11,6 +11,8 @@ import Users from "./Pages/Users/Users";
 import UserProfile from "./Pages/UserProfile/UserProfile";
 import AskAI from "./Pages/ai-ask/askAi";
 import About from "./Pages/About/about";
+import ProdPage from "./Pages/Products/ProductsPage";
+import TeamsPage from "./Pages/Teams/TeamsPage";
 
 const AllRoutes = ({ slideIn, handleSlideIn }) => {
   return (
@@ -47,6 +49,8 @@ const AllRoutes = ({ slideIn, handleSlideIn }) => {
       />
       <Route path="/ai-ask" element={<AskAI />} />
       <Route path="/about" element={<About />} />
+      <Route path="/products" element={<ProdPage />} />
+      <Route path="/Creams" element={<TeamsPage />} />
     </Routes>
   );
 };

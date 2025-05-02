@@ -8,11 +8,13 @@ const AskAI = () => {
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
-
-  const chatRef = useRef(null);
+  const chatContainerRef = useRef(null);
 
   useEffect(() => {
-    chatRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
   }, [messages]);
 
   const handleChange = (e) => {
@@ -62,16 +64,16 @@ const AskAI = () => {
 
   return (
     <>
-      <h2 className="aiester-heading">AIester - AI That Thinks in Syntax</h2> {/* ✨ Heading added above the container */}
-
+      <h2 className="aiester-heading">
+        AIester - AI That Thinks in Syntax
+      </h2>
       <div className="ask-ai-container">
-        <div className="chat-window">
+        <div className="chat-window" ref={chatContainerRef}>
           {messages.map((msg, index) => (
             <div key={index} className={`message ${msg.role}`}>
               {msg.text}
             </div>
           ))}
-          <div ref={chatRef} />
         </div>
 
         {error && <div className="error">{error}</div>}
