@@ -1,0 +1,131 @@
+/* BlogPage.css */
+
+body {
+    background-color: #0f0f1a;
+    font-family: 'Orbitron', sans-serif;
+    color: #ff00f7;
+    margin: 0;
+    /* padding-top: 60px; */
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 100px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    color: #00f7ff;
+    text-shadow: 0 0 5px #00f7ff, 0 0 10px #00f7ff;
+  }
+  
+  .open-popup-btn {
+    background-color: #ff00f7;
+    color: #0f0f1a;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .open-popup-btn:hover {
+    background-color: #00f7ff;
+    color: #0f0f1a;
+  }
+  
+  .blog-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .blog-card {
+    background-color: #1a1a2e;
+    border: 1px solid #ff00f7;
+    box-shadow: 0 0 10px #ff00f7, 0 0 20px #ff00f7;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .blog-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .blog-card h3 {
+    color: #00f7ff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .blog-card p {
+    color: #fff;
+    white-space: pre-wrap;
+  }
+  
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background-color: #1a1a2e;
+    border: 1px solid #ff00f7;
+    box-shadow: 0 0 10px #ff00f7, 0 0 20px #ff00f7;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    color: #fff;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #0f0f1a;
+    border: 1px solid #00f7ff;
+    color: #ff00f7;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  button {
+    background-color: #ff00f7;
+    color: #0f0f1a;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #00f7ff;
+    color: #0f0f1a;
+  }
+  

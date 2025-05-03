@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const WidgetTags = () => {
   const tags = [
@@ -21,7 +22,7 @@ const WidgetTags = () => {
 
   return (
     <div className="widget-tags">
-      <h4>Watched tags</h4>
+      <NavLink to={'/Tags'}><h4>Watched tags</h4></NavLink>
       <div className="widget-tags-div">
         {tags.map((tag) => (
           <p key={tag}>{tag}</p>

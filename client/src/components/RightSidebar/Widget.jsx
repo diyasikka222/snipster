@@ -3,11 +3,12 @@ import "./RightSidebar.css";
 import comment from "../../assets/comment-alt-solid.png";
 import pen from "../../assets/pen-solid.png";
 import blackLogo from "../../assets/Snipster-logo.png";
+import { NavLink } from "react-router-dom";
 
 const Widget = () => {
   return (
     <div className="widget">
-      <h4>The Snipster Blog</h4>
+      <NavLink to={'/BlogPage'}><h4>The Snipster Blog</h4></NavLink>
       <div className="right-sidebar-div-1">
         <div className="right-sidebar-div-2">
           <img src={pen} alt="pen" width="14" />

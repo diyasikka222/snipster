@@ -13,6 +13,7 @@ import AskAI from "./Pages/ai-ask/askAi";
 import About from "./Pages/About/about";
 import ProdPage from "./Pages/Products/ProductsPage";
 import TeamsPage from "./Pages/Teams/TeamsPage";
+import BlogPage from "./Pages/Blog/BlogPage";
 
 const AllRoutes = ({ slideIn, handleSlideIn }) => {
   return (
@@ -51,6 +52,7 @@ const AllRoutes = ({ slideIn, handleSlideIn }) => {
       <Route path="/about" element={<About />} />
       <Route path="/products" element={<ProdPage />} />
       <Route path="/Creams" element={<TeamsPage />} />
+      <Route path="/BlogPage" element={<BlogPage />} />
     </Routes>
   );
 };
