@@ -1,9 +1,4 @@
 /* Main container with glowing and futuristic effects */
-.body {
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
 .ask-ai-container {
   width: 100%;
   max-width: 800px;
