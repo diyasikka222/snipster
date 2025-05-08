@@ -1,27 +1,48 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import OpenAI from 'openai';
 
-export async function run(prompt, apiKeyFromEnv = process.env.API_KEY) {
-  console.log("GENAI received key:", apiKeyFromEnv);
+// Initialize OpenAI instance with the API key and base URL
+const openai = new OpenAI({
+  baseURL: 'https://openrouter.ai/api/v1',
+  apiKey: process.env.OPENAI_API_KEY,  // Ensure your API key is set properly in environment variables
+  defaultHeaders: {
+    'HTTP-Referer': '<YOUR_SITE_URL>', // Optional
+    'X-Title': '<YOUR_SITE_NAME>', // Optional
+  },
+});
 
-  if (!apiKeyFromEnv) {
-    console.error("❌ API Key is missing! Check your .env setup.");
-    throw new Error("API Key is missing!"); // Throw error if API key is missing
-  }
-
-  const genAI = new GoogleGenerativeAI(apiKeyFromEnv);
-
+// Function to handle user prompt and return OpenAI response
+export async function run(prompt) {
   try {
-    const model = genAI.getGenerativeModel({ model: "models/gemini-1.5-pro" });
+    const completion = await openai.chat.completions.create({
+      model: 'openai/gpt-3.5-turbo', // Use the valid model ID
+      messages: [
+        {
+          role: 'user',
+          content: prompt, // Pass the user prompt dynamically
+        },
+      ],
+    });
 
-    // Generate content using the provided prompt
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text(); // Extract the response text from Gemini
-
-    console.log("✅ Gemini response:", text);
-    return text; // Return the AI's response text
+    // Log and return the response content
+    if (completion.choices && completion.choices.length > 0) {
+      const message = completion.choices[0].message.content;
+      console.log('OpenAI response:', message);
+      return message; // Return the assistant's response
+    } else {
+      console.log('No valid choices in response');
+      return 'No valid response from OpenAI.';
+    }
   } catch (error) {
-    console.error("❌ Error from Gemini:", error);
-    throw error; // Propagate the error to be handled by the caller
+    console.error('Error during OpenAI request:', error);
+    return 'There was an error processing your request.';
   }
 }
+
+// Example usage: Call the run function with a user prompt
+async function main() {
+  const userPrompt = 'What is the meaning of life?'; // Example prompt
+  const response = await run(userPrompt);
+  console.log('Response from OpenAI:', response);
+}
+
+main();
